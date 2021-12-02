@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="js/jquery-3.6.0.min.js"></script>
+    <script>
+        $(function(){
+            $("#pwd").keyup(function(){
+                $("#pwd_confirm").val("")
+                $("div").remove();
+            })
+            $("#pwd_confirm").keyup(function(){
+                if($("#pwd").val()!=$("#pwd_confirm").val()){
+                    $("div").remove(); //기존 div를 지운다(누적되지않도록)
+                    $("tr:last td:last").append("<div>incorrect</div>") //마지막tr,td에서 div를 추가한다
+                }else{ //입력한값이 같으면
+                    $("div").remove();
+                    $("tr:last td:last").append("<div>correct</div>")
+                }
+            })
+        })
+    </script>
+</head>
+<body>
+    <table style="border: 1px solid gray">
+        <tr>
+            <td>비밀번호</td>
+            <td><input type="password" id="pwd"></td>
+        </tr>
+        <tr>
+            <td>비밀번호확인</td>
+            <td><input type="password" id="pwd_confirm"></td>
+        </tr>
+    </table>
+</body>
+</html>

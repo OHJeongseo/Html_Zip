@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        var msg= "저의 홈페이지에 오신 것을 환영합니다....즐거운 시간이 되길"
+        function exec(){
+            document.getElementById("txt").value= msg;
+            msg= msg.substring(2)+msg.substring(0,2);
+            setTimeout("exec()",500); //자신의 함수를 호출(1번)
+            //setInterval("exec_other()",500); //계속 호출,다른 함수호출
+        }
+    </script>
+</head>
+<body onload="exec()">
+    <h1>문자스크롤</h1>
+    <input type="text" id="txt" size=50/>
+</body>
+</html>

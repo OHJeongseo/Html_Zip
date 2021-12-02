@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form exam</title>
+</head>
+<body>
+    <!--form을 사용하여 input type, name, checked, value, select,taxtarea,button 설정-->
+    <!--action 서버이름, name ,value 작성-->
+    <form action="test1.html"> <!--method="POST"-->
+        이름: <input type="text" name="name" size=10 placeholder="이름입력"><br/>
+        비밀번호: <input type="password" name="pwd" placeholder="비번입력"><br/>
+        주소: <input type="text" size=50  name="addr" placeholder="주소입력" maxlength="10"><br/>
+        <h3>좋아하는 색깔</h3>
+        <input type="checkbox" name="color" checked value="yellow"> 노랑<br/>
+        <input type="checkbox" name="color" value="red"> 빨강<br/>
+        <input type="checkbox" name="color" value="green"> 초록<br/>
+        <input type="checkbox" name="color" value="black"> 검정<br/>
+        <h3>당신의 성별은</h3>
+        <input type="radio" name="gender" value="남" checked>남자 
+        <input type="radio" name="gender" value="여">여자
+        <h3>좋아하는 동물은</h3>
+        <select size="3" name="animal" multiple>
+            <option>호랑이</option>
+            <option selected>강아지</option>
+            <option>사슴</option>
+            <option>코끼리</option>
+        </select><br/>
+        <h3>하고 싶은 말을 적으세요</h3>
+        <textarea rows="10" cols="50" name="memo">메모</textarea><br/>
+        <input type="submit" value="전송"/>
+        <input type="reset" value="취소"/>
+        <input type="button" value="버튼"/> <!--모양버튼-->
+        <button>button</button> <!--submit,서버로 이동하는 버튼-->
+    </form>
+</body>
+</html>

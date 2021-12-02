@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        var msg= new Array();
+        msg[0]= "안녕하세요. 제 홈페이지의 방문을 환영합니다";
+        msg[1]= "즐거운 시간이 되길....";
+        msg[2]= "방명록을 작성해 주세요";
+        msg[3]= "좋은 시간 되세요";
+        var cnt= 1; //글자수
+        var i= 0; //배열 인덱스
+        function exec(){
+            document.getElementById("txt").value= msg[i].substring(0,cnt);
+            if(cnt==msg[i].length){ //배열안의 모든문자 출력
+                i++;
+                cnt=0;
+                setTimeout("exec()",1000);
+            }else{ //배열안의 문자 출력중...
+                setTimeout("exec()",200);
+            }
+            if(i==msg.length) i= 0; //배열을 모두 출력하면 다시 처음으로 
+            cnt++;
+        }
+    </script>
+</head>
+<body onload="exec()">
+    <h1>문자스크롤</h1>
+    <input type="text" id="txt" size=50/>
+</body>
+</html>

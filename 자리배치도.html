@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function linemap(){
+            var cnt= parseInt(document.getElementById("cut").value);
+            var line= parseInt(document.getElementById("line").value);
+            var str="<h1>자리배치도</h1><table border=1>";
+            
+            str+="<tr>";
+            for(i=1;i<=cnt;i++){
+                str+="<td>"+i+"번</td>";
+                if(i%line==0){
+                    str+="</tr>"
+                }
+            } 
+            str+= "</table>"
+            document.getElementById("map").innerHTML= str;
+        }
+
+        function linemap1(){
+            var cnt= parseInt(document.getElementById("cut").value);
+            var line= parseInt(document.getElementById("line").value);
+            var str="<h1>자리배치도</h1><table border=1>";
+            
+            if(cnt%line==0){ //줄 확인
+                row= parseInt(cnt/line);
+            }else{
+                row= parseInt(cnt/line)+1;
+            }
+            //row= (cnt%line==0)?parseInt(cnt%line):parseInt(cnt%line)+1 삼항연산자
+
+            for(i=0; i<row;i++){ //라인수
+                str+="<tr>";
+                for(j=1;j<=line;j++){ //한줄 학생수
+                    num= (i*line+j);
+                    str+= "<td>"+num+"번 </td>";
+                    if(num>cnt) break;
+                }
+                str+="</tr>";
+            }
+            str+= "</table>";
+            document.getElementById("map").innerHTML= str;
+        }
+
+        //변수에 함수를 대입
+        var linemap2= function(){
+            var cnt= parseInt(document.getElementById("cut").value);
+            var line= parseInt(document.getElementById("line").value);
+            var str="<table border=1> <caption>자리배치도</caption>";
+            
+            if(cnt%line==0){ //줄 확인
+                row= parseInt(cnt/line);
+            }else{
+                row= parseInt(cnt/line)+1;
+            }
+            //row= (cnt%line==0)?parseInt(cnt%line):parseInt(cnt%line)+1
+
+            for(i=0; i<row;i++){ //라인수
+                str+="<tr>";
+                for(j=1;j<=line;j++){ //한줄 학생수
+                    num= (i*line+j);
+                    str+= "<td>"+num+"번 </td>";
+                    if(num>cnt) break;
+                }
+                str+="</tr>";
+            }
+            str+= "</table>";
+            document.getElementById("map").innerHTML= str;
+        }
+
+    </script>
+</head>
+<body>
+    전체 인원수<input type="text" id="cut"/><br/>
+    한줄 인원수<input type="text" id="line"/>
+    <input type="button" value="자리배치" onclick="linemap()"/>
+    <input type="button" value="for 자리배치" onclick="linemap1()"/>
+    <input type="button" value="for 자리배치1" onclick="linemap2()"/>
+    <div id="map"></div>
+</body>
+</html>

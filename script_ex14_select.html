@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function change(x){
+            if(x==1){
+                document.getElementById("music").multiple=true;
+            }else{
+                document.getElementById("music").multiple=false;
+            }
+        }
+
+        function musicChange(){
+            var str="";
+            var obj= document.getElementById("music");
+            /*if(obj.multiple==true){ //다중
+                for(i=0;i<obj.length;i++){
+                    if(obj[i].selected){
+                        str+= obj[i].text+"\n";
+                        //str+= obj[i].value+"\n";
+                    }
+                }
+            }else{ //단일
+                str= document.getElementById("music").value;
+            }*/
+
+            //name,id name이 같으면 배열로 처리
+            if(document.getElementsByName("chk")[0].checked){
+                for(i=0;i<obj.length;i++){
+                    if(obj[i].selected){
+                        str+= obj[i].text+"\n";
+                        //str+= obj[i].value+"\n";
+                    }
+                }
+            }else{ //단일
+                str= document.getElementById("music").value;
+            }
+            alert(str);
+        }
+    </script>
+</head>
+<body>
+    <select size=5 id="music" onchange="musicChange()">
+        <option value="가요">가요</option>
+        <option value="팝송">팝송</option>
+        <option value="클래식">클래식</option>
+        <option value="재즈">재즈</option>
+        <option value="세미클래식">세미클래식</option>
+    </select>
+    <input type="radio" id="mul" name="chk" onclick="change(1)">
+    <label for="mul">다중선택</label>
+    <input type="radio" id="single" name="chk" checked onclick="change(0)">
+    <label for="single">단일선택</label>
+</body>
+</html>

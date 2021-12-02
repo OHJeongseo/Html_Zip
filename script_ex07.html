@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function sum(){
+            //parseInt(문자->숫자(정수) 변환)
+            //one= parseInt(document.getElementById("num1").value);
+            //two= parseInt(document.getElementById("num2").value);
+
+            //eval(문자->숫자(수치)변환)
+            one= eval(document.getElementById("num1").value);
+            two= eval(document.getElementById("num2").value);
+            document.getElementById("result").value= one+two;
+        }
+
+        function total(){
+            min= eval(document.getElementById("num1").value);
+            max= eval(document.getElementById("num2").value);
+
+            if(min>max){
+                tmp= min;
+                min= max;
+                max= tmp;
+            }
+            hap=0;
+            for(i=min;i<=max;i++){
+                    hap+=i
+                }
+                //document.getElementById("result").value= hap;
+                document.querySelector("#result").value= hap;
+            }
+
+            //배경색 변경
+            function changeColors(color, str){
+                alert(str+" 입니다.");
+                document.bgColor= color;
+            }
+            function chColors(obj){ //obj->버튼
+                document.bgColor= obj.value;
+            }
+            function chCol(obj){
+                document.bgColor= obj.id;
+                alert(obj.value);
+            }
+
+            //별그리기 *=9, *=7...*=1
+            function starDraw(){
+                var str="";
+                /*
+                for(i=1;i<=9;i+=2){
+                    for(j=9;j>=i;j--){
+                        str+="*";
+                    }
+                    str+="<br>";
+                }*/
+                for(i=9;i>=1;i-=2){
+                    for(j=1;j<=i;j++){
+                        str+="*";
+                    }
+                   str+="<br>";
+                }
+                document.getElementById("starArea").innerHTML= str;
+            }
+
+            var count= 1;
+            //count의 값에 따라 홀수->반갑습니다, 짝수->안녕히가세요
+            function hello(){
+                
+                if(count%2==1){
+                    alert(count+": 반갑습니다");
+                }else{
+                    alert(count+":안녕히가세요");
+                }
+                count++;
+            }
+    </script>
+</head>
+<body>
+    첫번째 수: <input type="text" id="num1" size="10"/><br/>
+    두번째 수: <input type="text" id="num2" size="10"/><br/>
+    결과 : <input type="text" id="result"/><br/>
+    <input type="button" value="합계" onclick="sum()"/>
+    <input type="button" value="작은수에서 큰수합계" onclick="total()"/>
+    <hr/>
+    <input type= "button" value="노랑" onclick="changeColors('yellow','노랑')"/>
+    <input type= "button" value="빨강" onclick="changeColors('red','빨강')"/>
+    <input type= "button" value="파랑" onclick="changeColors('blue','파랑')"/>
+    <input type= "button" value="초록" onclick="changeColors('green','초록')"/>
+    <hr/>
+    <input type="button" value="별그리기" onclick="starDraw()"/>
+    <div id="starArea"></div>
+    <hr/>
+    <input type= "button" value="yellow" onclick="chColors(this)"/> 
+    <input type= "button" value="red" onclick="chColors(this)"/>
+    <input type= "button" value="blue" onclick="chColors(this)"/>
+    <input type= "button" value="green" onclick="chColors(this)"/>
+    <hr/>
+    <input type= "button" value="노랑색" id="yellow" onclick="chCol(this)"/> 
+    <input type= "button" value="빨강색" id="red" onclick="chCol(this)"/>
+    <input type= "button" value="파랑색" id="blue" onclick="chCol(this)"/>
+    <input type= "button" value="초록색" id="green" onclick="chCol(this)"/>
+    <hr/>
+    <input type="button" value="인사하기" onclick="hello()"/>
+</body>
+</html>

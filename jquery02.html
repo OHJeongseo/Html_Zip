@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            width: 40px;
+            height: 40px;
+            margin: 5px;
+            float: left;
+            border: 2px solid blue;
+        }
+        /*
+        span{
+            color: white;
+        }*/
+    </style>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+    <button id="change">Change colors</button>
+    <span></span>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div id="stop">Stop here</div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+
+    <script>
+        $("#change").click(function(){
+            $("div").each(function(i){
+                $(this).css("backgroundColor","yellow");
+                if($(this).is("#stop")){
+                    $("span").text("stop index :"+i);
+                    $(this).css("backgroundColor","red");
+                }
+            })
+            $("div").eq(6).css("backgroundColor","orange");
+            //마지막 div -> gray
+            var lne= $("div").length
+            $("div").eq(lne-1).css("backgroundColor","gray");
+
+        })
+    </script>
+</body>
+</html>

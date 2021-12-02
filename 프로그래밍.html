@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /*ul의 list스타일 사용안함,글자위치 가운데, 위의아래 라인표시(선크기,선특성,선색깔) */
+        ul{
+            list-style: none;
+            text-align: center;
+            border-top: 5px solid rgb(20, 228, 183);
+            border-bottom: 5px solid rgb(25, 230, 185);
+        }
+        /*ul의 자식(li의 스타일을 설정),한줄에 나란히,라인과의 공백설정, 글자간의 공백설정*/
+        ul li{
+           display: inline;
+           padding: 5px 10px;
+           letter-spacing: 15px;
+        }
+        /*ul의 li의 a태그에 대한 설정, href를 설정할때 밑줄을 보이지않도록설정한다*/
+        ul li a{
+            text-decoration: none;
+        }
+        /*a태그의 글자를 선택했을때 밑줄이 나타나도록 설정 */
+        ul li a:hover{
+            text-decoration: underline;
+        }
+        div{
+            text-align: center;
+        }
+        
+    </style>
+     <script>
+        var imgArr= new Array("JAVA.png","JAVASCRIPT.png","ORACLE.png","HTML5.png");
+        var i= 0;
+        //프로그래밍 언어의 로고
+        function viewImg(){
+           document.getElementById("view").innerHTML= "<img src='testimg/"+imgArr[i]+"'>"; 
+           i++;
+           //이미지가 모두 출력되면 다시 처음부터 출력되도록 설정
+           if(i==imgArr.length) i=0;
+           
+           //이미지가 움직이는 것처럼 설정,2초마다 변환
+           setTimeout("viewImg()",2000)
+       }
+       function seolmyeong(str){
+            alert(str+"(언어) 에 대한 설명입니다.");
+       }
+   </script>
+</head>
+<body onload="viewImg()">
+    <ul>
+       <li value="java" onclick="seolmyeong('자바')"><a href="Java.html">자바</a></li>
+       <li value="sql" onclick="seolmyeong('오라클sql')"><a href="sql.html">데이터베이스SQL</a></li>
+       <li value="html" onclick="seolmyeong('HTML')"><a href="html.html">HTML</a></li>
+       <li value="script" onclick="seolmyeong('자바스크립트')"><a href="script.html">스크립트</a></li>
+    </ul>
+    <div id="view"/>
+</body>
+</html>

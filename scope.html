@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        var value= "Hello";
+        function globalScope(){
+            console.log('globalScope :'+value)
+        }
+        function functionScope(){
+            var value="Bye"
+            console.log('functionScope :'+value)
+        }
+        //var선언 함수내에서 유효
+        function myFunction(){ 
+            var value= "Bye"
+            if(true){
+                var value= 'World'
+                console.log('block scope :'+value)
+            }
+            console.log('myFunction scope :',value)
+        }
+        //const 블록내에서 유효
+        function blockScopeFunction(){
+            const value= 'Hi';
+            if(true){
+                const value= "How are you"
+                console.log('const block scope :'+value)
+            }
+            console.log('const scope :',value)
+        }
+
+        //호이스팅
+
+    </script>
+</head>
+<body>
+    <script>
+        globalScope();
+        functionScope();
+        console.log(value);
+        myFunction();
+        blockScopeFunction();
+    </script>
+</body>
+</html>

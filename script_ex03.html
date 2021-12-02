@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /*반복문 for*/
+        for(i=1;i<=5;i++){
+            document.write(i+":자바스크립트 <br>");
+        }
+        document.write("<hr>");
+
+        //2단
+        for(i=1;i<=9;i++){
+            document.write(2+"*"+i+"="+2*i+"<br/>");
+        }
+        document.write("<hr>");
+
+        //1~10까지 짝수
+        for(i=1;i<11;i++){
+            if(i%2==0){
+                document.write(i+"<br/>")
+            }
+        }
+        for(i=2;i<11;i+=2){
+            document.write(i+" ");
+        }
+        document.write("<hr>");
+
+        //수 입력, 1~입력수 짝수출력, 한줄에 5개숫자
+        // su= prompt("숫자를 입력하세요");
+        // cnt= 0;
+        // for(i=1;i<=su;i++){
+        //     if(i%2==0){
+        //         document.write(i+" ");
+        //         cnt++;
+        //     }
+        //     if(cnt==5){
+        //         document.write("<br/>");
+        //         cnt=0;
+        //     }
+        // }
+        document.write("<hr>");
+
+        //1부터 10까지 출력, 6제외
+        for(i=1;i<=10;i++){
+            if(i==6)continue;
+            document.write(i+" ");
+        }
+        document.write("<br>");
+
+        //1부터 10까지의 합
+        sum= 0;
+        for(i=1;i<=10;i++){
+            sum+=i;
+        }
+        document.write(sum+"<br>");
+
+        //1+2+3+4+5+6+7+8+9+10
+        sum= 0;
+        for(i=1;i<=10;i++){ //1+
+            sum+=i;
+            if(i!=10){
+                document.write(i+"+");
+            }else{
+                document.write(i+"="+sum+"<br>");
+            }
+        }
+
+        hap= 0;
+        for(i=1;i<=10;i++){ //+2
+            hap+=i;
+            if(i==1){
+                document.write(i);
+            }else{
+                document.write("+"+i)
+            }
+        }
+        document.write("="+hap);
+       document.write("<hr>");
+
+       //1부터 100까지의 합, 1~10, 1~20..1~100
+       sum= 0;
+       cnt= 0;
+       for(i=1;i<=100;i++){
+            sum+=i;
+            cnt++;
+            if(cnt%10==0){
+                document.write("1 ~ "+i+"까지의 합 "+sum+"<br>");
+            }
+       }
+       document.write("<hr>");
+
+       //1~10,11~20..91~100까의 합
+       sum= 0;
+       cnt= 0;
+       for(i=1;i<=100;i++){
+           sum+= i;
+           if(i%10==0){
+               document.write((i-9)+"~"+i+"="+sum+"<br>"); //10-9, 10, sum+=i
+               sum= 0;
+           }
+       }
+
+    </script>
+</body>
+</html>

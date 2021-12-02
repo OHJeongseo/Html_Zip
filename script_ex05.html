@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /*함수선언하고 body<>안의 태그<> 버튼을 클릭하면 호출되도록 설정*/
+        function test(){
+            //alert("test");
+            //20번에 txt에 반갑습니다
+            document.getElementById("txt").value="반갑습니다.";
+            alert(document.getElementById("txt").value);
+        }
+        function test1(str){
+            alert(str);
+        }
+        function changebgColor(){
+            document.bgColor="yellow";
+        }
+        function changeStyle(){
+            document.getElementById("p1").style.backgroundColor="green"
+            document.getElementById("p1").style.color="white";
+            document.getElementById("p1").style.fontStyle="italic"
+        }
+        function gugudan(){
+            var str= "";
+            for(i=1;i<10;i++){
+                str+="2*"+i+"="+2*i+"<br>";
+            }
+            document.getElementById("result").innerHTML=str;
+        }
+        function guguCal(){
+            d= document.getElementById("den").value; //id'den'의 값'value'을 가져와서 'd'에 넣고
+            //d= document.querySelector("#den").value;
+            var str= "";
+            for(i=1;i<10;i++){
+                str+=d+"*"+i+"="+d*i+"<br>";
+            }
+            document.getElementById("guguArea").innerHTML=str; //<>인식innerHTML
+            //document.querySelector("#guguArea").innnerHTHML=str;
+        }
+    </script>
+</head>
+<body>
+    <input type="text" id="txt"><br/>
+    <!--버튼을 클릭하면 함수호출하여 결과를 출력한다-->
+    <input type="button" value="test" onclick="test()"/>
+    <input type="button" value="test1" onclick="test1('안녕')"/>
+    <input type="button" value="변경" onclick="changebgColor()"/>
+    <hr/>
+    <p id="p1">여기를 변경합니다</p>
+    <input type="button" value="클릭" onclick="changeStyle()"/>
+    <input type="button" value="2단" onclick="gugudan()"/>
+    <!--호출한 함수의값을 div태그안'document.getElementById("result").innerHTML=str;'에 출력-->
+    <div id="result"></div><br/>
+    단: <input type="text" id="den"/>
+    <input type="button" value="구구단" onclick="guguCal(den)">
+    <div id="guguArea"></div>
+</body>
+</html>

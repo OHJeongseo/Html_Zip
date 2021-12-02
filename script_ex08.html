@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        //마우스 이벤트(움직임에 따른) 함수
+        function over(obj){ //마우스가 올려졌을때 이미지를 변환
+            obj.src="image/images.png";
+        }
+        function out(obj){
+            obj.src="image/images1.png";
+        }
+    </script>
+</head>
+<body>
+    <!--
+        상대경로: 현재 위치 기준
+        절대경로: 루트 시작
+    -->
+    <h3>마우스를 올려보세요</h3>
+    <img src="./image/images.png" alt="이미지" 
+    onmouseenter="over(this)" 
+    onmouseout="out(this)"> <!--enter 마우스 올린경우, out마우스 내린경우-->
+    <hr>
+    <div>
+    <img src="./image/images1.png" alt="이미지2"
+     onmouseenter="this.src='./image/images.png'" 
+    onmouseout="this.src='./image/images1.png'">
+    </div>
+</body>
+</html>

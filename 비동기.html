@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            text-align: center;
+        }
+    </style>
+    <script src="js/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+    <div class="itmes"></div>
+    <script>
+        let result;
+        let url= "https://yts-proxy.now.sh/list_movies.json?sort_by=rating";
+        $.ajax({
+            type:"get",
+            url:url,
+        }).then(function(res){
+            result= res.data.movies;
+            for(i=0;i<res.data.limit;i++){ //result.length
+                addDiv(result[i]);
+            }
+        })
+
+        /*서버에서 이미지를 가져와서 div를 만들고 class'.itmes'를 추가하여 이미지를 출력한다 */
+        function addDiv(i){
+            let newDiv= document.createElement("div");
+            let itmes= document.querySelector('.itmes');
+            newDiv.innerHTML="title :"+i.title+"<br/><img src="+i.medium_cover_image+" width='300px' height='300px' />";
+            itmes.append(newDiv);
+        }
+    </script>
+</body>
+</html>

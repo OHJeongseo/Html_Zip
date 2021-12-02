@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /*스타일 설정*/
+        table{
+            width: 600;
+            height: 400;
+            border: 2px solid;
+        }
+        td, th{
+            border: 2px solid;
+        }
+        .bgcolor{
+            background-color: turquoise;
+        }
+    </style>
+</head>
+<body>
+    <!--form과 table을 사용하여 개인정보를 입력하는 html창을 설정한다-->
+    <form action="" method="POST">
+        <table>
+            <tr>
+                <th>성명</th>
+                <td><input type="text" name="name"></td>
+                <th>성별</th>
+                <td>
+                    <input type="radio" name="gender" value="남" checked>남
+                    <input type="radio" name="gender" value="여" >여
+                </td>
+            </tr>
+            <tr>
+                <th>생년월일</th>
+                <td colspan="3">
+                    <input type="text" name="year" size="10">연
+                    <input type="text" name="month" size="10">월
+                    <input type="text" name="day" size="10">일
+                    <input type="radio" name="yy" value="양력">양력
+                    <input type="radio" name="yy" value="음력">음력
+                </td>
+            </tr>
+            <tr>
+                <th>주소</th>
+                <td colspan="3">
+                    <input type="text" size="50" name="addr"/>
+                </td>
+            </tr>
+            <tr>
+                <th>전화번호</th>
+                <td colspan="3">
+                    <input type="text" size=10, name="phone">-
+                    <input type="text" size=10, name="phone">-
+                    <input type="text" size=10, name="phone">
+                </td>
+            </tr>
+            <tr>
+                <td colspan="4" class="bgcolor">사용가능한 프로그램 선택하기</th>
+            </tr>
+            <tr>
+                <td colspan="4">
+                    <ol type="A">
+                        <li><input type="checkbox" name="pgm" value="한글">한글</li>
+                        <li><input type="checkbox" name="pgm" value="포토샵">포토샵</li>
+                        <li><input type="checkbox" name="pgm" value="매크로">매크로</li>
+                        <li><input type="checkbox" name="pgm" value="드림워버">드림워버</li>
+                        <li><input type="checkbox" name="pgm" value="3D">3D</li>
+                    </ol>
+                </td>
+            </tr>
+            <tr>
+                <th colspan="4" class="bgcolor">타고 싶은 차종</th>
+            </tr>
+            <tr>
+                <td colspan="4">
+                    <select name="car">
+                        <option>car1</option>
+                        <option>car2</option>
+                        <option>car3</option>
+                        <option>car4</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <th colspan="4" class="bgcolor">가고 싶은 여행지 모두선택</th>
+            </tr>
+            <tr>
+                <td>
+                    <select multiple size="3" name="trip">
+                        <option>trip1</option>
+                        <option>trip2</option>
+                        <option>trip3</option>
+                        <option>trip4</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <th colspan="4" class="bgcolor">미래 꿈</th>
+            </tr>
+            <tr>
+                <td colspan="4">
+                    <textarea rows="5" cols="50">미래의 꿈은 희망입니다</textarea>
+                </td>
+            </tr>
+            <tr>
+                <th colspan="4">
+                    <input type="submit" value="전송">
+                    <input type="reset" value="다시쓰기">
+                </th>
+            </tr>
+    </table>
+    </form>
+</body>
+</html>

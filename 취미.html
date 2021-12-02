@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function chkBtn(){
+           var str="";
+           var obj= document.getElementsByName("chkB");
+           for(i=0;i<obj.length;i++){
+               if(obj[i].checked){
+                   str+=obj[i].value+"\n";
+               }
+           }
+           
+           if(str=="") str="선택하세요 다중선택 가능";
+           alert(str);
+
+        }
+    </script>
+</head>
+<body>
+    <input type="checkbox" name="chkB" id="h1" value="수영"/>
+    <label for="h1">수영</label><br/>
+    <input type="checkbox" name="chkB" id="h2" value="독서"/>
+    <label for="h2">독서</label><br/>
+    <input type="checkbox" name="chkB" id="h3" value="영화"/>
+    <label for="h3">영화</label><br/>
+    <input type="checkbox" name="chkB" id="h4" value="음악"/>
+    <label for="h4">음악</label><br/>
+    <input type="button" value="선택" onclick="chkBtn()"/>
+</body>
+</html>

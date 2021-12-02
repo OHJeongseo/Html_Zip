@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const materials=[
+        'Hydrogen',
+        'Helium',
+        'Lithium',
+        'Beryllium'
+        ]
+        for(i=0;i<materials.length;i++){
+            console.log(materials[i]);
+        }
+        console.log(materials.map(material=>materials.length)); //화살표 함수
+        console.log(materials.map(function(material){
+            return materials.length
+        }));
+    </script>
+</body>
+</html>

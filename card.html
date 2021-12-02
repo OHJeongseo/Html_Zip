@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form>
+        <fieldset>
+            <legend>카드 정보 입력</legend>
+            <ol>
+                <li><fieldset>
+                    <legend>카드타입</legend>
+                    <ol>
+                        <li>
+                            <input type="checkbox" id="visa" name="card" value="visa">
+                            <label for="visa">VISA</label></li>
+                        <li>
+                            <input type="checkbox" id="amex" name="card" value="amex">
+                            <label for="amex">AmEx</label>
+                        </li>
+                        <li>
+                            <input type="checkbox" id="master" name="card" value="master">
+                            <label for="master">Mastercard</label>
+                        </li>
+                    </ol>
+                </fieldset></li>
+                <li><label for="cardnumber">카드번호</label>
+                    <input type="number" required name="cardnumber" id="cardnumber"
+                </li>
+                <li>
+                    <label for="crcnumber">CRC번호</label>
+                    <input type="number" required name="crcnumber" id="crcnumber"></li>
+                <li>
+                    <label for="ownername">카드 소유자 이름</label>
+                    <input type="text" placeholder="카드 상의 이름" id="ownername"
+                    required name="ownername"></li>
+            </ol>
+        </fieldset>
+        <fieldset>
+            <button type="submit">구매</button>
+        </fieldset>
+    </form>
+</body>
+</html>

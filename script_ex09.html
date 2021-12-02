@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!--외부 스크립트 사용-->
+    <script src="script.js">
+    </script>
+</head>
+<body>
+    <!--외부 자바스크립트를 활용하여 ex08과 같은 이벤트를 구현하는 코드-->
+    <h3>마우스를 올려보세요</h3>
+    <img src="./image/images.png" alt="이미지1" id="fruit"
+    onmouseover="over()" onmouseout="out()">
+    <hr>
+    <h3>홍길동이 우리 모임에 참여하는 것을 환영합니까?</h3>
+    <input type="text" id="result"/>
+    <script>
+        var ret= askopt("찬성하면 확인/반대면 취소");
+        document.getElementById("result").value=ret;
+    </script>
+
+</body>
+</html>

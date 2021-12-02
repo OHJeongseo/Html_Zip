@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        var cnt= 1;
+        var nansu= Math.floor(Math.random()*100); //parseInt(Math.random()*100)+1;
+        function clickSu(){
+            var insert= document.getElementById("result").value; //입력값
+            var dap=""; //화면출력
+            var btn= document.getElementById("clickbtn"); //버튼 활성화여부 변수
+
+            if(insert==nansu){
+                dap+="정답입니다 <br>";
+            }else if(insert<nansu){
+               dap+="보다 큽니다 <br>"
+            }else{
+                dap+="보다 작습니다 <br>";
+            }
+            document.getElementById("daping").innerHTML= dap;
+
+            /*
+            if(insert>nansu){
+                document.getElementById("daping").innerHTML= "입력수 크다"
+                cnt++
+            }else if(insert<nansu){
+                document.getElementById("daping").innerHTML= "입력수 작다"
+                cnt++
+            }else{
+                document.getElementById("daping").innerHTML= "정답"
+                return;
+            }
+            */
+
+            if(cnt>=5) {
+                alert("입력횟수가 초과되었습니다.");
+                btn.disabled=true; //버튼비활성화
+                //document.getElementById("btn").disabled= true;
+                return;
+            }
+            cnt++;
+        }
+
+        function randoms(){
+            //var nansu= Math.floor(Math.random()*100);
+            //document.getElementById("result").value= nansu+"입니다";
+            document.getElementById("daping").innerHTML= "난수<b>"+nansu+"</b>";
+        }
+    </script>
+</head>
+<body>
+    <h1>Number Guess</h1>
+    1~100사이 난수를 맞추세요<p>
+    <input type="text" id="result"/>
+    <input type="button" value="클릭" onclick="clickSu()" id="clickbtn"/>
+    <input type="button" value="난수보기" onclick="randoms()"/>
+    <div id="daping"/>
+</body>
+</html>

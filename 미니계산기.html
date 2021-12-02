@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        //변수는 함수밖에서 사용해도 되나 객체가 된 경우는 함수안에 작성한다
+        function cal(op){
+            var n1= eval(document.getElementById("num1").value);
+            var n2= eval(document.getElementById("num2").value);
+
+            var dap= 0;
+            /*
+            if(op=="+"){
+                document.getElementById("result").value= n1+n2;
+                //dep= n1+n2;
+            }else if(op=="-"){
+                document.getElementById("result").value= n1-n2;
+            }else if(op=='*'){
+                document.getElementById("result").value= n1*n2;
+            }else if(op=="/"){
+                document.getElementById("result").value= n1/n2;
+            }
+            //document.getElementById("result").value= dap;
+            */
+           switch(op){
+               case "+": dap= n1+n2; break;
+               case "-": dap= n1-n2; break;
+               case "*": dap= n1*n2; break;
+               case "/": dap= n1/n2; break;
+           }
+           document.getElementById("result").value= dap;
+
+        }
+    </script>
+</head>
+<body>
+    <form>
+        <table border="1" align="center">
+            <caption>미니계산기</caption> <!--테이블 이름-->
+            <tr>
+                <td>숫자1</td>
+                <td><input type="text" id="num1"/></td>
+            </tr>
+            <tr>
+                <td>숫자2</td>
+                <td><input type="text" id="num2"/></td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <input type="button" value="더하기" onclick="cal('+')"/>
+                    <input type="button" value="빼기" onclick="cal('-')"/>
+                    <input type="button" value="곱하기" onclick="cal('*')"/>
+                    <input type="button" value="나누기" onclick="cal('/')"/>
+                </td>
+            </tr>
+            <tr>
+                <td>결과</td>
+                <td><input type="text" id="result"/></td>
+            </tr>
+        </table>
+    </form>
+</body>
+</html>

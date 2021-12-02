@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /*자바스크립트 if,switch */
+        //성적입력 받아서 학점을 출력
+        jumsu= prompt("점수를 입력하세요");
+        /*if(jumsu>=90){
+            alert("A학점");
+        }else if(jumsu>=80){
+            alert("B학점");
+        }else if(jumsu>=70){
+            alert("C학점");
+        }else{
+            alert("노력하세요");
+        }*/
+
+        //window-> alert,persetInt
+        //jumsu= 88;
+        switch(parseInt(jumsu/10)){ //8.8-> 8
+            case 10:
+            case 9:alert("A학점");break;
+            case 8:alert("B학점");break;
+            case 7:alert("C학점");break;
+            default:alert("노력");
+        }
+
+        //성적을 입력, A->A학점
+        var score= prompt("점수를 입력하세요", "A~F");
+        var grade= score.toUpperCase(); //a->A
+        switch(grade){
+            case "A":alert("A학점");break;
+            case "B":alert("B학점");break;
+            case "C":alert("C학점");break;
+            case "D":alert("D학점");break;
+            case "F":alert("F학점");break;
+            default:alert("입력오류")
+        }
+
+
+    </script>
+</body>
+</html>

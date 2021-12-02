@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        var imgArr= ["image/images0.png","image/images1.png","image/images2.png","image/images3.png"]
+        function imgsrc(){
+            //선택한 option에 따라 이미지변환
+            idx= document.getElementById("img").selectedIndex;
+            document.getElementById("imgid").src=imgArr[idx];          
+        }
+
+    </script>
+</head>
+<body>
+    <select id="img" onchange="imgsrc()">
+        <option>그림0</option>
+        <option>그림1</option>
+        <option>그림2</option>
+        <option>그림3</option>
+    </select>
+    <img src="image/images0.png" id="imgid"/>
+</body>
+</html>

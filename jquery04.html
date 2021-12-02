@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            color: red;
+        }
+    </style>
+    <script src="js/jquery-3.6.0.min.js"></script>
+    <script>
+        //jquery 
+        $(document).ready(function(){
+           $("#btn").click(function(){
+                /*$("ul li").each(function(){
+                    if($(this).text()=="안드로이드"){
+                        $(this).css({"color":"blue", "fontSize":"50px"});
+                    }
+                })*/
+                $("ul li").each(function(i){
+                    if($("ul li").eq(i).text()=="안드로이드"){
+                        $(this).css({"color":"blue", "fontSize":"50px"});
+                    }
+                })
+            })
+
+        })
+        //자바스크립트
+        function test(){ //style.color= red, style.fontSize= 30px
+            var item= document.getElementsByTagName("li");
+            for(i=0;i<item.length;i++){
+                if(item[i].innerHTML=="스마트폰"){
+                    item[i].style.color= "red";
+                    item[i].style.fontSize= "30px"
+                }
+            }
+        }
+    </script>
+</head>
+<body>
+    <ul>
+        <li>안드로이드</li>
+        <li>스마트폰</li>
+        <li>2G폰</li>
+    </ul>
+    <input type="button" value="클릭" id="btn">
+    <input type="button" value="자바스크립트 클릭" onclick="test()"><hr/>
+    <input type="text" value="some text"/>
+    <p></p>
+    <hr/>
+    <select name="garden" multiple=multiple>
+        <option>장미</option>
+        <option selected="selected">진달래</option>
+        <option>개나리</option>
+        <option selected="selected">백합</option>
+        <option>도라지꽃</option>
+    </select>
+    <div></div>
+    <script>
+        $("input[type='text']").keydown(function(){
+            var txt= $(this).val().toLocaleUpperCase(); //input의 값을 가져올때 val(), 대문자로 변환하여 p태그안에 출력
+            $("p").text(txt);
+        })
+
+        $("select").change(function(){
+            var str= "";
+            $("select option:selected").each(function(){
+                str+= $(this).text()+" ";
+            })
+            //$("div").text(str);
+            $("div").html("<b><u>"+str+"</u></b>");
+        })
+    </script>
+</body>
+</html>

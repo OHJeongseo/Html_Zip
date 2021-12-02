@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function inpn(){
+            //이름
+            var name= document.getElementById("name").value;
+            //성별
+            var g= document.getElementById("num2").value.substring(0,1); 
+            if(g==1||g==3||g==5){
+                gen="남자"
+            }else if(g==2||g==4||g==6){
+                gen="여자"
+            }
+
+            //나이
+            var today= new Date();
+            age= today.getFullYear()-1900- document.getElementById("num1").value.substring(0,2);
+            if(g==3||g==5){
+                age= today.getFullYear()-2000- document.getElementById("num1").value.substring(0,2);
+            }
+            //정보
+            alert(name+"님은 "+age+"세 "+gen+" 입니다");
+
+        }
+    </script>
+</head>
+<body>
+    이름<input type="text" id=name /><br/>
+    주민번호<input type="text" id=num1 maxlength="6"/>-
+    <input type="password" id="num2" maxlength="7"/><br/>
+    <input type="button" id=btn onclick="inpn()" value="확인"/>
+</body>
+</html>
